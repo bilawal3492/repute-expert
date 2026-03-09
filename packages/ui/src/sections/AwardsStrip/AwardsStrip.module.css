@@ -1,0 +1,17 @@
+/* Awards marquee */
+.badgeTrack {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.badgeTrack:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "@repute/config",
+  "version": "0.0.1",
+  "private": true,
+  "files": ["tailwind.config.base.js", "tsconfig.base.json"]
+}
