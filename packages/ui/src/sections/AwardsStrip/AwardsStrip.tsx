@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import styles from "./AwardsStrip.module.css";
 
 /* ─── Types ───────────────────────────────────────────────────────────── */
@@ -186,17 +185,8 @@ export function AwardsStrip({
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.mediaCard}
+                style={card.image ? { backgroundImage: `url(${card.image})`, backgroundSize: "cover", backgroundPosition: "center" } : undefined}
               >
-                {card.image && (
-                  <Image
-                    src={card.image}
-                    alt=""
-                    fill
-                    priority
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                )}
                 <div className={styles.mediaCardOverlay} />
                 <div className={styles.mediaCardContent}>{card.overlay}</div>
                 <div className={styles.mediaCardArrowBadge}>
@@ -215,17 +205,8 @@ export function AwardsStrip({
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.mediaCard}
+                style={card.image ? { backgroundImage: `url(${card.image})`, backgroundSize: "cover", backgroundPosition: "center" } : undefined}
               >
-                {card.image && (
-                  <Image
-                    src={card.image}
-                    alt=""
-                    fill
-                    priority
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                )}
                 <div className={styles.mediaCardOverlay} />
                 <div className={styles.mediaCardContent}>{card.overlay}</div>
                 <div className={styles.mediaCardArrowBadge}>
