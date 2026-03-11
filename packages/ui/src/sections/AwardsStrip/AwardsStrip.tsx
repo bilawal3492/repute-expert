@@ -101,14 +101,14 @@ const JEOverlay = () => (
 );
 
 const ForbesOverlay = () => (
-  <span className="text-[#1a1a1a] text-[40px] font-bold italic tracking-[-0.02em]" style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>Forbes</span>
+  <span className="text-white text-[40px] font-bold italic tracking-[-0.02em] drop-shadow-lg" style={{ fontFamily: "Georgia, 'Times New Roman', serif" }}>Forbes</span>
 );
 
 const FintechTimesOverlay = () => (
   <div className="flex items-center gap-1.5">
-    <span className="text-[#1a1a1a] text-[15px] tracking-[0.02em]" style={{ fontFamily: "Georgia, serif" }}>THE</span>
-    <span className="bg-[#1a1a1a] text-white text-[15px] px-2 py-0.5 font-bold" style={{ fontFamily: "Georgia, serif" }}>FINTECH</span>
-    <span className="text-[#1a1a1a] text-[15px] tracking-[0.02em]" style={{ fontFamily: "Georgia, serif" }}>TIMES</span>
+    <span className="text-white text-[15px] tracking-[0.02em] drop-shadow-lg" style={{ fontFamily: "Georgia, serif" }}>THE</span>
+    <span className="bg-white text-[#1a1a1a] text-[15px] px-2 py-0.5 font-bold" style={{ fontFamily: "Georgia, serif" }}>FINTECH</span>
+    <span className="text-white text-[15px] tracking-[0.02em] drop-shadow-lg" style={{ fontFamily: "Georgia, serif" }}>TIMES</span>
   </div>
 );
 
@@ -133,12 +133,12 @@ const DEFAULT_MENTIONS: Mention[] = [
 
 const DEFAULT_MIDDLE_CARDS: MediaCard[] = [
   { image: "/images/image-1.webp", overlay: <ReddotOverlay />, url: "#" },
-  { image: undefined, overlay: <JEOverlay />, url: "#" },
+  { image: "/images/image-2.webp", overlay: <JEOverlay />, url: "#" },
 ];
 
 const DEFAULT_RIGHT_CARDS: MediaCard[] = [
-  { image: undefined, overlay: <ForbesOverlay />, url: "#" },
-  { image: undefined, overlay: <FintechTimesOverlay />, url: "#" },
+  { image: "/images/image-3.webp", overlay: <ForbesOverlay />, url: "#" },
+  { image: "/images/image-4.webp", overlay: <FintechTimesOverlay />, url: "#" },
 ];
 
 /* ─── Component ───────────────────────────────────────────────────────── */
@@ -185,7 +185,7 @@ export function AwardsStrip({
                 href={card.url ?? "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${styles.mediaCard} ${card.image ? styles.mediaCardWithImage : styles.mediaCardPlain}`}
+                className={styles.mediaCard}
               >
                 {card.image && (
                   <Image
@@ -196,9 +196,9 @@ export function AwardsStrip({
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 )}
-                {card.image && <div className={styles.mediaCardOverlay} />}
+                <div className={styles.mediaCardOverlay} />
                 <div className={styles.mediaCardContent}>{card.overlay}</div>
-                <div className={`${styles.mediaCardArrowBadge} ${card.image ? styles.arrowBadgeDark : styles.arrowBadgeLight}`}>
+                <div className={styles.mediaCardArrowBadge}>
                   <ArrowUpRight />
                 </div>
               </a>
@@ -213,7 +213,7 @@ export function AwardsStrip({
                 href={card.url ?? "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${styles.mediaCard} ${card.image ? styles.mediaCardWithImage : styles.mediaCardPlain}`}
+                className={styles.mediaCard}
               >
                 {card.image && (
                   <Image
@@ -224,9 +224,9 @@ export function AwardsStrip({
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 )}
-                {card.image && <div className={styles.mediaCardOverlay} />}
+                <div className={styles.mediaCardOverlay} />
                 <div className={styles.mediaCardContent}>{card.overlay}</div>
-                <div className={`${styles.mediaCardArrowBadge} ${card.image ? styles.arrowBadgeDark : styles.arrowBadgeLight}`}>
+                <div className={styles.mediaCardArrowBadge}>
                   <ArrowUpRight />
                 </div>
               </a>
