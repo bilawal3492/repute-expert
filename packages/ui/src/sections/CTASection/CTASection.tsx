@@ -34,7 +34,7 @@ export function CTASection({
           />
         </div>
 
-        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-10 lg:gap-20 items-center px-10 lg:px-16 py-14 lg:py-20">
+        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-10 lg:gap-20 items-start px-10 lg:px-16 py-14 lg:py-20">
           {/* Left: heading */}
           <h2 className="text-white font-bold text-[clamp(1.8rem,3vw,2.8rem)] leading-[1.15] tracking-[-0.02em]">
             {headline.split("\n").map((line, i, arr) => (
@@ -98,24 +98,20 @@ export function CTASection({
                 </div>
 
                 {/* Toggle + privacy text + submit */}
-                <div className="flex items-center gap-3 flex-wrap">
+                <div className="flex items-center gap-3 overflow-hidden">
                   {/* iOS-style toggle */}
                   <button
                     type="button"
                     onClick={() => setForm((p) => ({ ...p, agreed: !p.agreed }))}
                     aria-pressed={form.agreed}
-                    className={`relative shrink-0 w-11 h-6 rounded-full transition-colors duration-200 ${
-                      form.agreed ? "bg-white/70" : "bg-white/20"
-                    }`}
+                    style={{ position: "relative", flexShrink: 0, width: 44, height: 24, borderRadius: 999, overflow: "hidden", transition: "background 0.2s", background: form.agreed ? "rgba(255,255,255,0.55)" : "rgba(255,255,255,0.2)" }}
                   >
                     <span
-                      className={`absolute top-[3px] w-[18px] h-[18px] rounded-full bg-white transition-transform duration-200 ${
-                        form.agreed ? "translate-x-[22px]" : "translate-x-[3px]"
-                      }`}
+                      style={{ position: "absolute", top: 3, left: form.agreed ? 23 : 3, width: 18, height: 18, borderRadius: 999, background: "white", transition: "left 0.2s" }}
                     />
                   </button>
 
-                  <p className="text-white/40 text-[12px] flex-1 leading-snug min-w-[180px]">
+                  <p className="text-white/40 text-[12px] flex-1 leading-snug min-w-0">
                     I confirm that I have read, consent and agree to our{" "}
                     <a href="#" className="underline text-white/60 hover:text-white/80 transition-colors">
                       Privacy Policy
