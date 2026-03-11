@@ -29,9 +29,9 @@
   align-items: center;
   gap: 14px;
   padding: 16px 16px;
-  border: 1px solid #f0f0f0;
+  border: 1px solid #ebebeb;
   border-radius: 12px;
-  margin-bottom: -1px;
+  margin-bottom: 8px;
   text-decoration: none;
   transition: background-color 0.2s ease;
 }
@@ -90,9 +90,8 @@
   border-radius: 14px;
   overflow: hidden;
   text-decoration: none;
-  /* equal flex so both cards share the full column height */
   flex: 1;
-  min-height: 0;
+  min-height: 210px;
   color: white;
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
@@ -145,14 +144,7 @@
   background-color: rgba(0, 0, 0, 0.60);
 }
 
-.mentionRow:first-child {
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
 .mentionRow:last-child {
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
   margin-bottom: 0;
 }
 

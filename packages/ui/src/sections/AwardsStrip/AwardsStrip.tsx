@@ -192,6 +192,7 @@ export function AwardsStrip({
                     src={card.image}
                     alt=""
                     fill
+                    priority
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
@@ -220,6 +221,7 @@ export function AwardsStrip({
                     src={card.image}
                     alt=""
                     fill
+                    priority
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
