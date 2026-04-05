@@ -7,7 +7,8 @@
     opacity 0.45s ease;
 }
 
-.navOverlay.open {
+.navOverlay.open,
+.open {
   transform: translateY(0);
   opacity: 1;
   pointer-events: all;
@@ -19,17 +20,9 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.navOverlay.open .navLink:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
-.navOverlay.open .navLink:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
-.navOverlay.open .navLink:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
-.navOverlay.open .navLink:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
-.navOverlay.open .navLink:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
-.navOverlay.open .navLink:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.35s; }
-
-.hamburgerLine {
-  display: block;
-  height: 1.5px;
-  background: white;
-  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
-  transform-origin: center;
-}
+.open .navLink:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+.open .navLink:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
+.open .navLink:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.2s; }
+.open .navLink:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
+.open .navLink:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+.open .navLink:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.35s; }

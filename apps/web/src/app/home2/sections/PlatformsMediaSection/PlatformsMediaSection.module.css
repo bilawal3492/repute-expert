@@ -1,0 +1,204 @@
+/* ─── 3-column grid ────────────────────────────────────────────────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+  }
+}
+
+/* ─── Left column: mention rows ─────────────────────────────────────── */
+
+.mentionsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: stretch;
+}
+
+.mentionRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+  flex: 1;
+}
+
+.mentionRow:hover {
+  background-color: #fafafa;
+}
+
+.mentionLogo {
+  width: 64px;
+  min-width: 64px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mentionName {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.mentionLink {
+  font-size: 13px;
+  color: #999;
+  white-space: nowrap;
+  padding-right: 6px;
+}
+
+.mentionArrow {
+  flex-shrink: 0;
+  margin-left: auto;
+  color: #ccc;
+  transition: color 0.2s;
+}
+
+.mentionRow:hover .mentionArrow {
+  color: #555;
+}
+
+/* ─── Right two columns: stacked media cards ────────────────────────── */
+
+.cardsCol {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-self: stretch;
+}
+
+.mediaCard {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  flex: 1;
+  min-height: 160px;
+  background-color: #ffffff;
+  border: 1px solid #ebebeb;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mediaCard:hover {
+  border-color: transparent;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+}
+
+.mediaCardOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.overlayVisible {
+  background: rgba(0, 0, 0, 0.25) !important;
+}
+
+.mediaCardContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.contentDefault {
+  color: #1a1a1a;
+}
+
+.contentOnHover {
+  color: white;
+}
+
+.arrowBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.25s, color 0.25s;
+  z-index: 3;
+}
+
+.arrowDefault {
+  background-color: #f2f2f2;
+  color: #888;
+}
+
+.arrowOnHover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+/* ─── Media Partners marquee ─────────────────────────────────────────── */
+
+.marqueeWrapper {
+  overflow: hidden;
+  position: relative;
+  /* Fade edges */
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+}
+
+.marqueeTrack:hover {
+  animation-play-state: paused;
+}
+
+.marqueeItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 32px;
+  flex-shrink: 0;
+}
+
+.marqueeImg {
+  height: 40px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  filter: grayscale(1) opacity(0.55);
+  transition: filter 0.3s ease;
+}
+
+.marqueeItem:hover .marqueeImg {
+  filter: grayscale(0) opacity(1);
+}
+
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}

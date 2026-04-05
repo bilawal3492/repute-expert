@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@repute/ui";
 import { Footer } from "@repute/ui";
 import { CookieBanner } from "@repute/ui";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
   title: {
@@ -29,13 +32,25 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning>
+      <body className={inter.variable} suppressHydrationWarning>
         <Header
+          logo={{
+            src: "/images/repute-expert-logo.png",
+            alt: "Reputation Experts",
+            width: 547,
+            height: 100,
+          }}
           brandName="Reputation Experts"
-          ctaLabel="Contact us"
+          ctaLabel="Talk To Expert"
           ctaLink="/contact"
-          servicesLabel="Services"
-          servicesHref="/services"
+          phoneNumber="0800 654 6009"
+          phoneHref="tel:08006546009"
+          navItems={[
+            { label: "Main", href: "/" },
+            { label: "Solutions", href: "/services" },
+            { label: "Knowledge", href: "/blog" },
+            { label: "Contact", href: "/contact" },
+          ]}
         />
         {children}
         <Footer />

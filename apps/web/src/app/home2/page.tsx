@@ -1,24 +1,24 @@
 import type { Metadata } from "next";
-import { DentalHeroSection } from "./home2/sections/DentalHeroSection";
-import { ProblemStatementSection } from "./home2/sections/ProblemStatementSection";
-import { ReputationManagementSection } from "./home2/sections/ReputationManagementSection";
-import { DentalServicesSection } from "./home2/sections/DentalServicesSection";
-import { DigitalReputationSection } from "./home2/sections/DigitalReputationSection";
-import { IndustryAuthoritySection } from "./home2/sections/IndustryAuthoritySection";
-import { GoogleAIOverviewSection } from "./home2/sections/GoogleAIOverviewSection";
-import { PlatformsMediaSection } from "./home2/sections/PlatformsMediaSection";
-import { DentalCaseStudiesSection } from "./home2/sections/DentalCaseStudiesSection";
-import { DentalFAQSection } from "./home2/sections/DentalFAQSection";
-import { DentalCTASection } from "./home2/sections/DentalCTASection";
-import { DentalContactSection } from "./home2/sections/DentalContactSection";
+import { DentalHeroSection } from "./sections/DentalHeroSection";
+import { ProblemStatementSection } from "./sections/ProblemStatementSection";
+import { ReputationManagementSection } from "./sections/ReputationManagementSection";
+import { DentalServicesSection } from "./sections/DentalServicesSection";
+import { DigitalReputationSection } from "./sections/DigitalReputationSection";
+import { IndustryAuthoritySection } from "./sections/IndustryAuthoritySection";
+import { GoogleAIOverviewSection } from "./sections/GoogleAIOverviewSection";
+import { PlatformsMediaSection } from "./sections/PlatformsMediaSection";
+import { DentalCaseStudiesSection } from "./sections/DentalCaseStudiesSection";
+import { DentalFAQSection } from "./sections/DentalFAQSection";
+import { DentalCTASection } from "./sections/DentalCTASection";
+import { DentalContactSection } from "./sections/DentalContactSection";
 
 export const metadata: Metadata = {
-  title: "Reputation Experts — Protect & Grow Your Online Reputation",
+  title: "Dental Clinics — Reputation Management for Dental Practices",
   description:
-    "We protect and grow your online reputation. Remove harmful reviews, build trust, and increase revenue with professional reputation management.",
+    "We protect and grow dental clinics' online reputations. Improve bookings, build trust, and increase revenue with professional reputation management.",
 };
 
-export default function HomePage() {
+export default function Home2Page() {
   return (
     <main>
       {/* ── 1. Hero ──────────────────────────────────────────────── */}

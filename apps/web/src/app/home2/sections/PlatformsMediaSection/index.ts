@@ -1,0 +1,1 @@
+export { PlatformsMediaSection } from "./PlatformsMediaSection";
