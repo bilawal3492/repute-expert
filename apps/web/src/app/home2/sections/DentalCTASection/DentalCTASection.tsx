@@ -63,21 +63,23 @@ export function DentalCTASection() {
 
           {/* ── Bottom row ───────────────────────────────────────── */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
-            {/* Phone button */}
-            <a
-              href="tel:08006546009"
-              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full border border-white/30 text-white text-[14px] font-medium hover:border-white/60 transition-colors whitespace-nowrap"
-            >
-              0800 654 6009
-            </a>
+            <div className="flex flex-row items-center gap-3 sm:contents">
+              {/* Talk To Expert button — first */}
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-[#FF461E] text-white text-[14px] font-medium hover:bg-[#e63b15] transition-colors whitespace-nowrap"
+              >
+                Talk To Expert
+              </Link>
 
-            {/* Talk To Expert button */}
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-[#FF461E] text-white text-[14px] font-medium hover:bg-[#e63b15] transition-colors whitespace-nowrap"
-            >
-              Talk To Expert
-            </Link>
+              {/* Phone button */}
+              <a
+                href="tel:08006546009"
+                className="inline-flex items-center justify-center px-6 py-2.5 rounded-full border border-white/30 text-white text-[14px] font-medium hover:border-white/60 transition-colors whitespace-nowrap"
+              >
+                0800 654 6009
+              </a>
+            </div>
 
             {/* Tagline */}
             <p className="text-white/35 text-[13px] sm:ml-4 leading-snug">

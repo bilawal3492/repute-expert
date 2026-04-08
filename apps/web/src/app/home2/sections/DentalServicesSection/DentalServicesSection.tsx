@@ -30,43 +30,43 @@ const DEFAULT_SERVICES: DentalServiceItem[] = [
   {
     name: "Review Dispute & Removal",
     description:
-      "We legally remove harmful, fake, malicious, and policy-violating reviews from online platforms like Google Maps that are damaging your reputation, on an ongoing basis. Our dispute team knows exactly what language platforms respond to, and we follow up until reviews are taken down.",
+      "Damaging reviews can shape how customers see your business before they ever make contact. We help identify high-risk review issues, challenge harmful content where appropriate, and protect your reputation across Google and other key platforms to preserve trust, strengthen profile quality, and limit reputational damage. Our service also includes ongoing protection against harmful reviews as they appear. Unlike many online reputation management companies that treat review issues as a one-off task, we understand that reputation protection is an ongoing process and is included as part of our all-inclusive monthly packages.",
     category: "Reviews",
   },
   {
-    name: "Review Generation Strategy",
+    name: "Review Generation",
     description:
-      "We help your business generate a steady stream of positive reviews that builds trust, strengthens your Google rating, and drives more customers to choose you over competitors. Our system makes it effortless for happy patients to leave feedback right after their appointment.",
+      "Consistent positive reviews increase trust, strengthen your online reputation, and influence buying decisions before a customer ever contacts your business. We help brands build a healthier review profile across the platforms that matter most — increasing review quality, improving rating strength, and supporting stronger commercial performance over time.",
     category: "Reviews",
   },
   {
     name: "Google Business Optimisation",
     description:
-      "We optimise your Google Business Profile to rank higher in local search and Google Maps. From category selection and service descriptions to photos, Q&A, and post scheduling — we make sure your profile converts browsers into booked patients.",
+      "A weak Google Business Profile can cost you visibility, trust, and enquiries. We help businesses improve the quality, credibility, and commercial performance of their Google presence so they stand out more effectively in local search, rank more strongly in Google Maps results and recommendations, and convert more potential customers into leads.",
     category: "Search & Content",
   },
   {
-    name: "Negative Content Suspension",
+    name: "Crisis & Issue Response",
     description:
-      "We suppress damaging search results and replace them with authoritative, trust-building content that presents your business properly on page one. Negative articles, complaint-board listings, and outdated press are pushed out of sight.",
+      "Damaging online content can harm trust long before a customer ever contacts your business. We take down harmful photos, videos, articles, and other negative content that affects how they are perceived online. Where removal is not possible, we focus on reducing its visibility and strengthening the presence of more credible, positive content so harmful results are buried behind positive content and appear at the last pages of the search results.",
     category: "Search & Content",
   },
   {
     name: "Digital PR & Authority Building",
     description:
-      "We help businesses build brand authority through strategic features and articles across major, niche, and local media outlets, strengthening visibility in Google AI Overviews and recommendations in ChatGPT.",
+      "Authority matters. We help businesses strengthen their brand through digital PR and strategic media exposure across major international publications, local news outlets, and industry-specific media. This broader media footprint helps reinforce trust, elevate perceived credibility, and build the kind of authority signals that increasingly influence Google search, Google AI Overviews, and AI platforms such as ChatGPT when presenting businesses to potential customers. Whether through globally recognised names such as BBC, Business Insider, NBC, FOX, CBS, Yahoo Finance, and Digital Journal, Evening Standard, The Sun, Telegraph, or through more targeted local and industry-led coverage, the objective is the same: build a stronger, more trusted, more visible brand.",
     category: "PR & Media",
   },
   {
     name: "AI Overview Optimisation",
     description:
-      "We keep your business visible in AI-driven search by optimising your Google Business Profile, driving consistent client reviews, and structuring your online presence so Google surfaces you, not your competitors.",
+      "Traditional SEO is no longer the full picture. Google AI Overviews are increasingly shaping which businesses get seen, trusted, and chosen first. We help brands strengthen the authority, relevance, and reputation signals that support better visibility within AI-generated search results, helping position the business more competitively in a rapidly changing search landscape.",
     category: "Search & Content",
   },
   {
     name: "Daily Monitoring and Protection",
     description:
-      "Real-time alerts whenever your practice is mentioned online. New review? We notify you. Negative article? We flag it. So you're never caught off guard again. We monitor Google, Trustpilot, Facebook, Instagram, and major news outlets 24/7.",
+      "Negative content, harmful reviews, and new reputation threats can appear at any time. Our monthly service helps businesses challenge damaging content, address harmful reviews where appropriate, and protect how the brand is seen across the platforms that influence customer decisions most. This frequently includes fake competitor reviews, unreasonable customer complaints, and personal revenge-driven attacks from former employees - issues we deal with regularly and effectively take them down. The result is stronger trust, greater credibility, and better long-term reputation protection.",
     category: "All Services",
   },
 ];
@@ -170,7 +170,7 @@ export function DentalServicesSection({
                     <div className="pb-6">
                       <div className="w-full h-px bg-white/10 mb-5" />
                       {service.description && (
-                        <p className="text-white/60 text-[14px] leading-[1.75]">
+                        <p className="text-white/60 text-[14px] leading-[1.75] text-justify">
                           {service.description}
                         </p>
                       )}

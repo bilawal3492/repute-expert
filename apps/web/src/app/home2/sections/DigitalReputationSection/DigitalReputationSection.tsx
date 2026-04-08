@@ -54,12 +54,36 @@ export function DigitalReputationSection({
               {heading}
             </h2>
 
-            <p className="text-[#444] text-[14px] sm:text-[15px] leading-[1.8] mb-8">
+            <p className="text-[#444] text-[14px] sm:text-[15px] leading-[1.8] mb-8 text-justify lg:text-left">
               {description}
             </p>
 
-            {/* Tags */}
-            <div className="flex flex-wrap gap-2.5">
+            {/* Tags ─ Mobile: short ones 2-per-row, long ones full-width below */}
+            {/* Desktop: original natural flex-wrap */}
+            <div className="lg:hidden space-y-2">
+              {/* 2-col grid for short tags */}
+              <div className="grid grid-cols-2 gap-2">
+                {tags.filter((t) => t.length <= 24).map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-2 rounded-full border border-[#d8d8d8] text-[#333] text-[12px] font-normal leading-[1.3] bg-white text-center"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              {/* Full-width for long tags */}
+              {tags.filter((t) => t.length > 24).map((tag) => (
+                <span
+                  key={tag}
+                  className="block px-4 py-2 rounded-full border border-[#d8d8d8] text-[#333] text-[12px] font-normal leading-[1.3] bg-white text-center"
+                >
+                  {tag}
+                </span>
+              ))}
+            </div>
+            {/* Desktop */}
+            <div className="hidden lg:flex flex-wrap gap-2.5">
               {tags.map((tag) => (
                 <span
                   key={tag}

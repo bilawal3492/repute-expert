@@ -18,14 +18,13 @@ export function GoogleAIOverviewSection() {
           {/* ── Left: text ───────────────────────────────────────── */}
           <div>
             <h2
-              className="text-[#1a1a1a] font-normal leading-[1.15] tracking-[-0.02em] mb-6"
-              style={{ fontSize: "clamp(1.75rem, 3.8vw, 2.75rem)" }}
+              className="text-[#1a1a1a] font-medium text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.15] tracking-[-0.02em] mb-6 text-justify lg:text-left"
             >
               Google &lsquo;AI Overview&rsquo;
             </h2>
 
             <p
-              className="text-[#1a1a1a] font-semibold leading-[1.5] mb-5"
+              className="text-[#1a1a1a] font-semibold leading-[1.5] mb-5 text-justify lg:text-left"
               style={{ fontSize: "clamp(1rem, 1.8vw, 1.25rem)" }}
             >
               Google AI Overviews consolidate information from multiple sources
@@ -33,7 +32,7 @@ export function GoogleAIOverviewSection() {
               businesses online.
             </p>
 
-            <p className="text-[#444] text-[14px] sm:text-[15px] leading-[1.8]">
+            <p className="text-[#444] text-[14px] sm:text-[15px] leading-[1.8] text-justify lg:text-left">
               Google&rsquo;s AI Overviews are changing how customers discover
               businesses online. Instead of browsing multiple links, users are
               increasingly shown a single AI-generated answer drawn from across

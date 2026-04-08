@@ -7,9 +7,10 @@ import styles from "./Header.module.css";
 import type { HeaderProps } from "./Header.types";
 
 const DEFAULT_NAV: import("../../types").NavItem[] = [
-  { label: "Main", href: "/" },
-  { label: "Solutions", href: "/services" },
-  { label: "Knowledge", href: "/blog" },
+  { label: "About", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Blog", href: "/blog" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -127,6 +128,14 @@ export function Header({
             <a
               href={phoneHref}
               className="header__phone hidden sm:inline-flex items-center whitespace-nowrap rounded-full bg-[#1a1a1a] text-white text-[13px] font-semibold px-5 py-[9px] hover:bg-[#333] transition-colors"
+            >
+              {phoneNumber}
+            </a>
+
+            {/* Mobile: phone number pill (orange) */}
+            <a
+              href={phoneHref}
+              className="lg:hidden inline-flex items-center whitespace-nowrap rounded-full bg-[#FF461E] text-white text-[13px] font-semibold px-4 py-[9px] hover:bg-[#e63b15] transition-colors"
             >
               {phoneNumber}
             </a>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 
 interface FormErrors {
   name?: string;
@@ -24,6 +25,8 @@ export function DentalContactSection() {
   const [linkLen, setLinkLen] = useState(0);
   const [msgLen, setMsgLen] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Partial<Record<keyof FormErrors, boolean>>>({});
 
@@ -52,13 +55,37 @@ export function DentalContactSection() {
   const err = (field: keyof FormErrors) =>
     touched[field] ? errors[field] : undefined;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setTouched({ name: true, email: true, message: true, agreed: true });
     const errs = validate();
     setErrors(errs);
-    if (Object.keys(errs).length === 0) {
-      setSubmitted(true);
+    if (Object.keys(errs).length > 0) return;
+
+    setLoading(true);
+    setSubmitError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          link: form.link,
+          message: form.message,
+          source: "Dental Home Page",
+        }),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        setSubmitError(data.error || "Something went wrong. Please try again.");
+      } else {
+        setSubmitted(true);
+      }
+    } catch {
+      setSubmitError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -74,8 +101,7 @@ export function DentalContactSection() {
           {/* ── LEFT: Form ──────────────────────────────────────── */}
           <div>
             <h2
-              className="text-[#0f0f0f] font-bold leading-[1.1] tracking-[-0.03em] mb-5"
-              style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.2rem)" }}
+              className="text-[#1a1a1a] font-medium text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.15] tracking-[-0.02em] mb-5"
             >
               Get in touch
             </h2>
@@ -89,12 +115,12 @@ export function DentalContactSection() {
                 <p className="text-[#888] text-sm">We&apos;ll review your case and get back to you within 24 hours.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-8">
+              <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-8">
 
                 {/* Name + Email */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8">
                   <div>
-                    <label className="block text-[#0f0f0f] text-[14px] font-medium mb-3">
+                    <label className="block text-[#0f0f0f] text-[14px] font-medium mb-1.5">
                       Band / company name
                     </label>
                     <input
@@ -110,7 +136,7 @@ export function DentalContactSection() {
                     )}
                   </div>
                   <div>
-                    <label className="block text-[#0f0f0f] text-[14px] font-medium mb-3">
+                    <label className="block text-[#0f0f0f] text-[14px] font-medium mb-1.5">
                       Your email
                     </label>
                     <input
@@ -129,12 +155,12 @@ export function DentalContactSection() {
 
                 {/* Google Maps / Trustpilot Link */}
                 <div>
-                  <label className="block text-[#0f0f0f] text-[14px] font-medium mb-3">
+                  <label className="block text-[#0f0f0f] text-[14px] font-medium mb-1.5">
                     Google Maps / Trustpilot Link
                   </label>
                   <textarea
                     placeholder="Something about your great idea"
-                    rows={2}
+                    rows={1}
                     value={form.link}
                     maxLength={500}
                     onChange={(e) => {
@@ -148,12 +174,12 @@ export function DentalContactSection() {
 
                 {/* Tell us more */}
                 <div>
-                  <label className="block text-[#0f0f0f] text-[14px] font-medium mb-3">
+                  <label className="block text-[#0f0f0f] text-[14px] font-medium mb-1.5">
                     Tell us more about your project
                   </label>
                   <textarea
                     placeholder="Something about your great idea"
-                    rows={2}
+                    rows={1}
                     value={form.message}
                     maxLength={500}
                     onChange={(e) => {
@@ -212,22 +238,26 @@ export function DentalContactSection() {
 
                     <p className="text-[#888] text-[12px] flex-1 leading-snug min-w-0">
                       I confirm that I have read, consent and agree to our{" "}
-                      <a href="#" className="underline text-[#555] hover:text-[#111] transition-colors">
+                      <Link href="/privacy-policy" className="underline text-[#555] hover:text-[#111] transition-colors">
                         Privacy Policy
-                      </a>
+                      </Link>
                     </p>
 
                     <button
                       type="submit"
-                      className="ml-auto inline-flex items-center justify-center px-8 py-3 rounded-full text-white text-[14px] font-medium transition-colors whitespace-nowrap"
+                      disabled={loading}
+                      className="ml-auto inline-flex items-center justify-center px-8 py-3 rounded-full text-white text-[14px] font-medium transition-colors whitespace-nowrap disabled:opacity-60"
                       style={{ background: Object.keys(validate()).length === 0 ? "#FF461E" : "#c0c0c0" }}
                     >
-                      Submit
+                      {loading ? "Sending…" : "Submit"}
                     </button>
                   </div>
 
                   {err("agreed") && (
                     <p className="text-red-500 text-[11px]">{err("agreed")}</p>
+                  )}
+                  {submitError && (
+                    <p className="text-red-500 text-[12px] mt-2">{submitError}</p>
                   )}
                 </div>
 

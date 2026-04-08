@@ -15,6 +15,13 @@ export const metadata: Metadata = {
   description:
     "Professional online reputation management. We remove harmful, fake, and defamatory reviews from Google, Yelp, Trustpilot, Glassdoor, and 50+ platforms.",
   metadataBase: new URL("https://getreputationpros.com"),
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -46,14 +53,22 @@ export default function RootLayout({
           phoneNumber="0800 654 6009"
           phoneHref="tel:08006546009"
           navItems={[
-            { label: "Main", href: "/" },
-            { label: "Solutions", href: "/services" },
-            { label: "Knowledge", href: "/blog" },
+            { label: "About", href: "/" },
+            { label: "Services", href: "/services" },
+            { label: "Blog", href: "/blog" },
+            { label: "Careers", href: "/careers" },
             { label: "Contact", href: "/contact" },
           ]}
         />
         {children}
-        <Footer />
+        <Footer
+          logo={{
+            src: "/images/repute-expert-logo.png",
+            alt: "Reputation Experts",
+            width: 547,
+            height: 100,
+          }}
+        />
         <CookieBanner />
       </body>
     </html>

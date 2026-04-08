@@ -95,12 +95,12 @@ const FintechTimesOverlay = () => (
 /* ─── Data ────────────────────────────────────────────────────────────── */
 
 const MENTIONS = [
-  { logo: <CBSLogo />, name: "CBS", linkText: "Read Full Article", url: "#" },
-  { logo: <BBCLogo />, name: "BBC", linkText: "Read Full Article", url: "#" },
-  { logo: <FOXNewsLogo />, name: "FOX News", linkText: "Read Full Article", url: "#" },
-  { logo: <BusinessInsiderLogo />, name: "Business Insider", linkText: "Read Full Article", url: "#" },
-  { logo: <NBCLogo />, name: "NBC", linkText: "Read Full Article", url: "#" },
-  { logo: <DigitalJournalLogo />, name: "Digital Journal", linkText: "Read Full Article", url: "#" },
+  { logo: <CBSLogo />, name: "CBS", url: "#" },
+  { logo: <BBCLogo />, name: "BBC", url: "#" },
+  { logo: <FOXNewsLogo />, name: "FOX News", url: "#" },
+  { logo: <BusinessInsiderLogo />, name: "Business Insider", url: "#" },
+  { logo: <NBCLogo />, name: "NBC", url: "#" },
+  { logo: <DigitalJournalLogo />, name: "Digital Journal", url: "#" },
 ];
 
 // Correct extensions per actual files in /public/images/
@@ -160,8 +160,7 @@ export function PlatformsMediaSection() {
 
         {/* ── Heading ─────────────────────────────────────────────── */}
         <h2
-          className="text-[#1a1a1a] font-normal leading-[1.15] tracking-[-0.02em] mb-8 lg:mb-10"
-          style={{ fontSize: "clamp(1.75rem, 3.8vw, 2.75rem)" }}
+          className="text-[#1a1a1a] font-medium text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.15] tracking-[-0.02em] mb-8 lg:mb-10"
         >
           Platforms &amp; Media Outlets
         </h2>
@@ -175,7 +174,6 @@ export function PlatformsMediaSection() {
               <a key={i} href={m.url} target="_blank" rel="noopener noreferrer" className={styles.mentionRow}>
                 <div className={styles.mentionLogo}>{m.logo}</div>
                 <span className={styles.mentionName}>{m.name}</span>
-                <span className={styles.mentionLink}>{m.linkText}</span>
                 <span className={styles.mentionArrow}><ArrowUpRight /></span>
               </a>
             ))}
@@ -196,7 +194,7 @@ export function PlatformsMediaSection() {
 
         {/* ── Media Partners carousel ──────────────────────────────── */}
         <div className="mt-14 lg:mt-16">
-          <h3 className="text-[#1a1a1a] text-[clamp(1.75rem,3.2vw,2.5rem)] font-semibold tracking-[-0.02em] mb-6">
+          <h3 className="text-[#1a1a1a] text-[clamp(1.75rem,3.2vw,2.5rem)] font-medium tracking-[-0.02em] mb-6">
             Media Partners
           </h3>
 

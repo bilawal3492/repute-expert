@@ -65,8 +65,7 @@ export function ReputationManagementSection({
       <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
         {/* ── Heading ─────────────────────────────────────────── */}
         <h2
-          className="text-[#1a1a1a] font-normal leading-[1.15] tracking-[-0.02em] mb-8 lg:mb-12"
-          style={{ fontSize: "clamp(1.75rem, 3.8vw, 2.75rem)" }}
+          className="text-[#1a1a1a] font-medium text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.15] tracking-[-0.02em] mb-8 lg:mb-12"
         >
           {heading}
         </h2>

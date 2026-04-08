@@ -64,7 +64,7 @@ export function DentalCaseStudiesSection() {
 
         {/* Heading row */}
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-[#0f0f0f] font-semibold text-[clamp(1.75rem,3.2vw,2.5rem)] tracking-[-0.01em]">
+          <h2 className="text-[#1a1a1a] font-medium text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.15] tracking-[-0.02em]">
             Case Studies
           </h2>
           <Link
@@ -173,7 +173,6 @@ export function DentalCaseStudiesSection() {
         {/* MOBILE: single card with fade + dots */}
         <div className="lg:hidden">
           <div className="relative bg-[#f4f4f4] rounded-2xl p-7 flex flex-col justify-between min-h-[320px]">
-            <span className="absolute top-5 left-1/2 -translate-x-1/2 w-2.5 h-2.5 rounded-full bg-[#e8502a]" />
             <div
               style={{
                 opacity: visible ? 1 : 0,
@@ -182,7 +181,7 @@ export function DentalCaseStudiesSection() {
               }}
             >
               <div className="text-[48px] font-serif leading-none text-[#0f0f0f] mb-2 select-none">&ldquo;</div>
-              <p className="text-[#0f0f0f] text-[15px] font-medium leading-[1.7]">
+              <p className="text-[#0f0f0f] text-[15px] font-medium leading-[1.7] text-justify">
                 {CASE_STUDIES[active].quote}
               </p>
             </div>
@@ -209,13 +208,13 @@ export function DentalCaseStudiesSection() {
             </footer>
           </div>
 
-          <div className="flex items-center gap-2 mt-4">
+          <div className="flex items-center justify-center gap-2.5 mt-5">
             {CASE_STUDIES.map((_, i) => (
               <button
                 key={i}
                 onClick={() => handleSelect(i)}
                 className={`rounded-full transition-all duration-300 ${
-                  i === active ? "w-5 h-1.5 bg-[#0f0f0f]" : "w-1.5 h-1.5 bg-[#ccc]"
+                  i === active ? "w-7 h-2 bg-[#0f0f0f]" : "w-2 h-2 bg-[#ccc]"
                 }`}
                 aria-label={`Case study ${i + 1}`}
               />

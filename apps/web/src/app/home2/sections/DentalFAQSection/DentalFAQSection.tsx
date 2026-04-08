@@ -6,27 +6,27 @@ const DENTAL_FAQ = [
   {
     question: "How can Reputation Experts protect your business from harmful new reviews?",
     answer:
-      "We monitor your online presence 24/7 across all major platforms. When a harmful, fake, or policy-violating review appears, we act fast — assessing whether it breaches platform guidelines, filing formal disputes on your behalf, and escalating where necessary. At the same time, we help build a consistent flow of genuine positive reviews that strengthen your overall rating and reduce the impact of any future negative content.",
+      "We monitor your Google Business Profile and other platforms around the clock. The moment a new harmful review appears, our team is alerted and processes the removal, if the review can not be taken down, we craft professional responses on your behalf that show prospective patients your practice takes feedback seriously. You're never caught off guard by a review again.",
   },
   {
     question: "How long does it take to see results for my dental practice?",
     answer:
-      "Most dental clients begin seeing measurable improvements within 6 to 12 weeks. Review removal timelines depend on the platform and the strength of the violation case, but our clients typically see rating improvements and increased patient enquiries within the first three months. Authority-building and AI Overview positioning deliver stronger results over a 4–6 month period.",
+      "Most practices see measurable improvement within 30 to 60 days. Review removal cases typically resolve in 1–3 weeks, depending on the platform, and our review generation system starts delivering new 5-star reviews within the first fortnight. By month three, you'll typically see a noticeable rating increase and a stronger first page on Google. Full reputation transformation - including AI Overview positioning and authority building - is a 4–6 month process.",
   },
   {
     question: "How does Google's AI Overview affect my dental practice?",
     answer:
-      "Google's AI Overviews now appear above traditional search results and consolidate information from multiple trusted sources into a single AI-generated answer. If your practice isn't being cited as a trusted source, you're invisible to a growing share of patients. We optimise your Google Business Profile, review signals, and online presence so Google surfaces your practice — not your competitors — in these AI-driven results.",
+      "Google's AI Overviews now pull together information from reviews, your website, and third-party sources into a single AI-generated answer at the top of the search results. When someone searches for terms like \"best dentist near me\", Google no longer just shows a list of websites; it increasingly highlights and recommends specific practices. Reputation Experts strengthens your entire digital presence so your practice is in a far better position to be trusted and recommended by Google's AI. This includes improving your review profile, increasing rating strength and review volume, optimising trust signals across your web presence, and building authority through high-quality third-party coverage. When your dental practice is featured in trusted media and reputable publications — something we specialise in — it creates the kind of authority signals that naturally improve how your practice is understood and recommended by Google AI Overviews, ChatGPT, and other AI-driven discovery platforms.",
   },
   {
     question: "How does Reputation Experts build a strong online reputation for my practice?",
     answer:
-      "We take a comprehensive approach: removing harmful reviews, generating a steady stream of genuine 5-star feedback, publishing authoritative content across trusted media outlets, and optimising your presence across every platform patients use to research dentists. The result is a reputation that builds trust at every touchpoint — from Google Maps to AI Overviews to direct searches.",
+      "We work across three phases. First, we clean up, removing policy-violating reviews, suppressing negative search results, and fixing gaps in your Google Business Profile. Second, we strengthen, building a steady flow of genuine 5-star reviews from your existing patients using follow-up systems timed around appointments, and publishing authoritative content that positions your practice as a trusted name online. Third, we establish long-term authority, securing press coverage, optimising for Google AI Overviews and ChatGPT recommendations, and providing ongoing monitoring so your reputation stays protected month after month.",
   },
   {
     question: "How does Reputation Experts help clinics boost their bookings and increase sales?",
     answer:
-      "A stronger online reputation directly drives more bookings. When patients see a high rating backed by genuine reviews, they choose your clinic with confidence. Our clients typically see a 30–50% increase in new patient enquiries within the first three months, driven by improved ratings, better visibility in search, and a trusted online presence that converts browsers into booked appointments.",
+      "Reputation directly drives revenue. 87% of customers check online reviews before making an appointment (unless existing clients). A practice sitting at lower score stars loses patients to a competitor at a higher score every single day, even if the clinical care is identical. We close that gap by removing unfair reviews that drag your rating down, generating a consistent stream of new 5-star reviews that push it up, and ensuring your practice appears prominently when potential patients search on Google, ask ChatGPT, or browse AI Overviews. The result is more clicks, more calls, and more booked appointments, clients typically see a 30–50% increase in new patient enquiries within the first three months.",
   },
 ];
 
@@ -40,7 +40,7 @@ export function DentalFAQSection() {
       aria-label="Frequently Asked Questions"
     >
       <div className="max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
-        <h2 className="text-[#1a1a1a] font-bold text-[clamp(2.5rem,5vw,3.5rem)] tracking-[-0.03em] mb-10 lg:mb-12">
+        <h2 className="text-[#1a1a1a] font-medium text-[clamp(1.75rem,3.2vw,2.5rem)] leading-[1.15] tracking-[-0.02em] mb-10 lg:mb-12">
           FAQ
         </h2>
 
@@ -69,7 +69,7 @@ export function DentalFAQSection() {
                 <div
                   className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-60 pb-6" : "max-h-0"}`}
                 >
-                  <p className="text-[#666] text-[14px] leading-relaxed max-w-3xl">
+                  <p className="text-[#666] text-[14px] leading-relaxed max-w-3xl text-justify lg:text-left">
                     {item.answer}
                   </p>
                 </div>

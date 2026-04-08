@@ -15,10 +15,37 @@ export function CTASection({
   const [form, setForm] = useState({ name: "", email: "", message: "", agreed: false });
   const [msgLen, setMsgLen] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    if (!form.name.trim() || !form.email.trim() || !form.message.trim()) return;
+
+    setLoading(true);
+    setSubmitError("");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          message: form.message,
+          source: "CTA Section",
+        }),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        setSubmitError(data.error || "Something went wrong. Please try again.");
+      } else {
+        setSubmitted(true);
+      }
+    } catch {
+      setSubmitError("Network error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -120,11 +147,15 @@ export function CTASection({
 
                   <button
                     type="submit"
-                    className="shrink-0 rounded-full bg-white/15 hover:bg-white/25 text-white text-[13px] font-medium px-7 py-2.5 transition-colors"
+                    disabled={loading}
+                    className="shrink-0 rounded-full bg-white/15 hover:bg-white/25 text-white text-[13px] font-medium px-7 py-2.5 transition-colors disabled:opacity-60"
                   >
-                    Submit
+                    {loading ? "Sending…" : "Submit"}
                   </button>
                 </div>
+                {submitError && (
+                  <p className="text-red-400 text-[12px] mt-3">{submitError}</p>
+                )}
               </form>
             )}
           </div>
