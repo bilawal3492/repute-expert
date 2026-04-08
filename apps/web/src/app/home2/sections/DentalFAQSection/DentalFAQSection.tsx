@@ -67,7 +67,7 @@ export function DentalFAQSection() {
                   </span>
                 </button>
                 <div
-                  className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-60 pb-6" : "max-h-0"}`}
+                  className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-[2000px] pb-6" : "max-h-0"}`}
                 >
                   <p className="text-[#666] text-[14px] leading-relaxed max-w-3xl text-justify lg:text-left">
                     {item.answer}
