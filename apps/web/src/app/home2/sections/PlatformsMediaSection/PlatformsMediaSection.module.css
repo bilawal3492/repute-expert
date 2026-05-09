@@ -33,6 +33,8 @@
   text-decoration: none;
   transition: background-color 0.2s ease;
   flex: 1;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .mentionRow:hover {
@@ -131,6 +133,24 @@
 
 .contentOnHover {
   color: white;
+}
+
+.apLogoBlack {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.apLogoWhite {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contentOnHover .apLogoBlack {
+  opacity: 0;
+}
+
+.contentOnHover .apLogoWhite {
+  opacity: 1;
 }
 
 .arrowBadge {
