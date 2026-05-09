@@ -34,7 +34,7 @@ const DEFAULT_SERVICES: DentalServiceItem[] = [
     category: "Reviews",
   },
   {
-    name: "Review Generation",
+    name: "Review Generation Strategy",
     description:
       "Consistent positive reviews increase trust, strengthen your online reputation, and influence buying decisions before a customer ever contacts your business. We help brands build a healthier review profile across the platforms that matter most — increasing review quality, improving rating strength, and supporting stronger commercial performance over time.",
     category: "Reviews",
@@ -44,6 +44,12 @@ const DEFAULT_SERVICES: DentalServiceItem[] = [
     description:
       "A weak Google Business Profile can cost you visibility, trust, and enquiries. We help businesses improve the quality, credibility, and commercial performance of their Google presence so they stand out more effectively in local search, rank more strongly in Google Maps results and recommendations, and convert more potential customers into leads.",
     category: "Search & Content",
+  },
+  {
+    name: "Ongoing Reputation Protection",
+    description:
+      "Your reputation needs continuous care, not just a one-off fix. We provide ongoing monitoring and protection across all the platforms that matter — catching harmful content early, flagging new threats, and ensuring your business is always presented in the best possible light. This includes regular review monitoring, alert systems, and proactive management of emerging reputation risks.",
+    category: "All Services",
   },
   {
     name: "Crisis & Issue Response",

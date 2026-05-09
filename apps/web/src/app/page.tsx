@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
-import { DentalHeroSection } from "./home2/sections/DentalHeroSection";
-import { ProblemStatementSection } from "./home2/sections/ProblemStatementSection";
-import { ReputationManagementSection } from "./home2/sections/ReputationManagementSection";
+import { MainHeroSection } from "./home2/sections/MainHeroSection";
+import { OnlineReputationExpertsSection } from "./home2/sections/OnlineReputationExpertsSection";
+import { IndustriesSection } from "./home2/sections/IndustriesSection";
 import { DentalServicesSection } from "./home2/sections/DentalServicesSection";
-import { DigitalReputationSection } from "./home2/sections/DigitalReputationSection";
-import { IndustryAuthoritySection } from "./home2/sections/IndustryAuthoritySection";
-import { GoogleAIOverviewSection } from "./home2/sections/GoogleAIOverviewSection";
+import { PlatformsAndAISection } from "./home2/sections/PlatformsAndAISection";
+import { WhoWeServeSection } from "../../../../packages/ui/src/sections/WhoWeServeSection";
+import { KeyBenefitsSection } from "../../../../packages/ui/src/sections/KeyBenefitsSection";
+import { PartnersSection } from "./home2/sections/PartnersSection/PartnersSection";
 import { PlatformsMediaSection } from "./home2/sections/PlatformsMediaSection";
 import { DentalCaseStudiesSection } from "./home2/sections/DentalCaseStudiesSection";
 import { DentalFAQSection } from "./home2/sections/DentalFAQSection";
+import { InsightsSection } from "./home2/sections/InsightsSection/InsightsSection";
 import { DentalCTASection } from "./home2/sections/DentalCTASection";
 import { DentalContactSection } from "./home2/sections/DentalContactSection";
 
@@ -21,47 +23,45 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main>
-      {/* ── 1. Hero ──────────────────────────────────────────────── */}
-      <DentalHeroSection
-        headline="We protect and grow Dental Clinics' online reputations."
-        subtitle="Improving online reputation directly affects clinics by helping them gain more bookings, build trust, and increase sales."
-        ctaLabel="Free Assessment"
-        ctaLink="/contact"
-        imageSrc="/images/dental-1.png"
-        imageAlt="Dental clinic consultation"
-      />
+      {/* ── 0. Main Hero ─────────────────────────────────────────── */}
+      <MainHeroSection />
 
-      {/* ── 2. Problem Statement + Platform Cards ────────────────── */}
-      <ProblemStatementSection />
+      {/* ── 0b. Online Reputation Experts ───────────────────────── */}
+      <OnlineReputationExpertsSection />
 
-      {/* ── 3. Reputation Management Services ────────────────────── */}
-      <ReputationManagementSection />
+      {/* ── 0c. Industries ───────────────────────────────────────── */}
+      <IndustriesSection />
 
-      {/* ── 4. Services (accordion + detail panel) ───────────────── */}
+      {/* ── 0d. Services ─────────────────────────────────────────── */}
       <DentalServicesSection />
 
-      {/* ── 5. Digital Reputation Management ──────────────────────── */}
-      <DigitalReputationSection />
+      {/* ── 0e. Platforms + Get Recommended by AI ────────────────── */}
+      <PlatformsAndAISection />
 
-      {/* ── 6. Industry Authority Brand in 6 Months ──────────────── */}
-      <IndustryAuthoritySection />
-
-      {/* ── 7. Google AI Overview ─────────────────────────────────── */}
-      <GoogleAIOverviewSection />
+      <WhoWeServeSection />
 
       {/* ── 8. Platforms & Media Outlets ──────────────────────────── */}
       <PlatformsMediaSection />
 
-      {/* ── 9. Case Studies ─────────────────────────────────────── */}
+      {/* ── Key Benefits ──────────────────────────────────────────── */}
+      <KeyBenefitsSection />
+
+      {/* ── Partners ─────────────────────────────────────────────── */}
+      <PartnersSection />
+
+      {/* ── Case Studies ─────────────────────────────────────────── */}
       <DentalCaseStudiesSection />
 
-      {/* ── 10. FAQ ────────────────────────────────────────────── */}
+      {/* ── 10. FAQ ───────────────────────────────────────────────── */}
       <DentalFAQSection />
 
-      {/* ── 11. CTA ────────────────────────────────────────────── */}
+      {/* ── Insights ─────────────────────────────────────────────── */}
+      <InsightsSection />
+
+      {/* ── 11. CTA ───────────────────────────────────────────────── */}
       <DentalCTASection />
 
-      {/* ── 12. Get in Touch ───────────────────────────────────── */}
+      {/* ── 12. Get in Touch ──────────────────────────────────────── */}
       <DentalContactSection />
     </main>
   );

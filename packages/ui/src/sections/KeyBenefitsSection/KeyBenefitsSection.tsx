@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import type { ImageAsset } from "../../types";
 
 export interface Benefit {
@@ -13,6 +14,8 @@ export interface Benefit {
 
 export interface KeyBenefitsSectionProps {
   heading?: string;
+  ctaLabel?: string;
+  ctaHref?: string;
   benefits?: Benefit[];
 }
 
@@ -47,33 +50,39 @@ const DEFAULT_BENEFITS: Benefit[] = [
     title: "Reputation Monitoring",
     description: "Ongoing monitoring helps identify new reputation risks early so issues can be addressed before they escalate.",
   },
-  {
-    icon: { src: "/images/asset-7.webp", alt: "Fast Case Assessment icon" },
-    title: "Fast Case Assessment",
-    description: "We quickly review harmful online content and determine whether it may violate platform policies.",
-  },
 ];
 
 export function KeyBenefitsSection({
   heading = "Key Benefits",
+  ctaLabel = "Free Assessment",
+  ctaHref = "/contact",
   benefits = DEFAULT_BENEFITS,
 }: KeyBenefitsSectionProps) {
   return (
-    <section className="key-benefits bg-[#f2f2f2] py-14 lg:py-20">
-      <div className="key-benefits__inner max-w-[1280px] mx-auto px-5 lg:px-8">
+    <section className="key-benefits bg-white py-14 lg:py-20" style={{ fontFamily: "'Roboto', sans-serif" }}>
+      <div className="key-benefits__inner max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
 
-        <h2 className="key-benefits__heading text-[#0f0f0f] font-semibold text-[clamp(1.75rem,3.2vw,2.5rem)] tracking-[-0.01em] mb-10">
-          {heading}
-        </h2>
+        {/* Header row */}
+        <div className="flex items-center justify-between mb-10 lg:mb-12">
+          <h2 className="key-benefits__heading text-[#1a1a1a] font-normal text-[clamp(1.75rem,3.2vw,2.5rem)] tracking-[-0.02em]">
+            {heading}
+          </h2>
+          <Link
+            href={ctaHref}
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-[#FF461E] text-white text-[14px] font-medium hover:bg-[#e63b15] transition-colors whitespace-nowrap"
+          >
+            {ctaLabel}
+          </Link>
+        </div>
 
         <div className="key-benefits__grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {benefits.map((benefit) => (
             <div
               key={benefit.title}
-              className="key-benefits__card bg-white rounded-2xl p-6 hover:shadow-sm transition-all duration-200"
+              className="key-benefits__card bg-white rounded-2xl p-6 shadow-[0px_0px_12px_2px_rgba(0,0,0,0.05)] hover:shadow-[0px_0px_18px_4px_rgba(0,0,0,0.08)] transition-all duration-200"
             >
               {/* Icon */}
-              <div className="key-benefits__card-icon w-11 h-11 flex items-center justify-center mb-5 overflow-hidden shrink-0">
+              <div className="key-benefits__card-icon w-11 h-11 flex items-center justify-center mb-6 overflow-hidden shrink-0">
                 {benefit.icon ? (
                   <Image
                     src={benefit.icon.src}
@@ -87,7 +96,7 @@ export function KeyBenefitsSection({
                 )}
               </div>
 
-              <h3 className="key-benefits__card-title font-bold text-[#0f0f0f] text-[18px] leading-[1.3] mb-2">
+              <h3 className="key-benefits__card-title font-bold text-[#1a1a1a] text-[18px] leading-[1.3] mb-3">
                 {benefit.title}
               </h3>
 
@@ -104,3 +113,4 @@ export function KeyBenefitsSection({
     </section>
   );
 }
+

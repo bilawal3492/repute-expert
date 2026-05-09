@@ -1,0 +1,76 @@
+/* ─── Clip wrapper — clips sliding overflow, padding gives shadow room ── */
+.clipWrapper {
+  overflow: hidden;
+  margin: -16px;
+  padding: 16px;
+}
+
+/* ─── Track wrapper ─────────────────────────────────────── */
+.viewport {
+  width: 100%;
+}
+
+/* ─── Sliding track ─────────────────────────────────────── */
+.track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* ─── Card — default: 3 visible ────────────────────────── */
+.card {
+  flex: 0 0 calc((100% - 32px) / 3);
+  min-width: 0;
+  background: #fff;
+  border-radius: 14px;
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.08), 0px 2px 8px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.12), 0px 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Tablet: 2 visible */
+@media (max-width: 1023px) {
+  .card {
+    flex: 0 0 calc((100% - 16px) / 2);
+  }
+}
+
+/* Mobile: 1 visible */
+@media (max-width: 639px) {
+  .card {
+    flex: 0 0 100%;
+  }
+}
+
+/* ─── Nav buttons ───────────────────────────────────────── */
+.navBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0px 0px 12px 2px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.2s ease, background 0.2s ease;
+  flex-shrink: 0;
+}
+
+.navBtn:hover:not(:disabled) {
+  box-shadow: 0px 0px 18px 4px rgba(0, 0, 0, 0.12);
+  background: #f8f8f8;
+}
+
+.navBtn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}

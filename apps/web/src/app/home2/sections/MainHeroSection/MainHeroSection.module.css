@@ -1,0 +1,33 @@
+/* Responsive aspect ratio for the hero frame */
+.heroFrame {
+  aspect-ratio: 4 / 3;
+}
+
+@media (min-width: 640px) {
+  .heroFrame {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroFrame {
+    aspect-ratio: 16 / 7;
+  }
+}
+
+/* Main Hero animations */
+.fadeUp {
+  opacity: 0;
+  animation: mainHeroReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes mainHeroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

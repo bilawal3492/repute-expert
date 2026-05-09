@@ -43,8 +43,8 @@ export function WhoWeServeSection({
   cards = DEFAULT_CARDS,
 }: WhoWeServeSectionProps) {
   return (
-    <section className="who-we-serve bg-[#f2f2f2] py-14 lg:py-20">
-      <div className="who-we-serve__inner max-w-[1200px] mx-auto px-5 lg:px-8">
+    <section className="who-we-serve bg-white py-14 lg:py-20">
+      <div className="who-we-serve__inner max-w-[1280px] mx-auto px-5 sm:px-6 lg:px-10">
         {/* Header row */}
         <div className="who-we-serve__header flex items-center justify-between mb-10">
           <h2 className="who-we-serve__heading text-[#0f0f0f] font-semibold text-[clamp(1.75rem,3.2vw,2.5rem)] tracking-[-0.01em]">

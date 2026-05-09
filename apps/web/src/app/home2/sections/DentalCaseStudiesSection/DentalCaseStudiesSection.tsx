@@ -14,24 +14,24 @@ export interface CaseStudyItem {
 const CASE_STUDIES: CaseStudyItem[] = [
   {
     quote:
-      "A private dental clinic came to us with a 3.6-star rating, several damaging fake reviews, and an online reputation that was undermining patient trust. Within just under four months, we helped remove 8 fake and policy-violating reviews, implemented a consistent patient review strategy, and increased the clinic's rating to 4.7 stars. Consultation bookings rose by 40%, with the clinic benefiting from stronger trust, better visibility, and a much healthier flow of new enquiries.",
-    avatar: { src: "/images/dental-case-study-1.png", alt: "Dental Clinic Case Study" },
-    name: "Dental Clinic Case Study",
-    title: "Reputation Recovery for a Dental Clinic in Midlands",
+      "New aesthetics clinic in Jumeirah, suffered from low review count - no trust signals. Managed to build strong reputation bringing the overall score to over 4.9",
+    avatar: { src: "/images/dental-case-study-1.png", alt: "Aesthetics Clinic" },
+    name: "Aesthetics Clinic",
+    title: "Jumeirah, Dubai",
   },
   {
     quote:
-      "An independent restaurant came to Reputation Experts with a 3.9-star rating and a mixed review profile that was costing it bookings. After identifying and challenging damaging reviews, implementing a structured system for generating genuine guest feedback, and strengthening the restaurant's wider online trust signals, we helped increase its rating to 4.8 stars within five months. Reservation enquiries rose by 27%, and the restaurant moved from being overlooked online to being chosen with confidence.",
-    avatar: { src: "/images/dental-case-study-2.png", alt: "Pierre Lambert" },
-    name: "Pierre Lambert",
-    title: "Reputation Building for a Restaurant in London",
+      "Car Rental Office in Business Bay struggled to get online booking with 3.4 score, increased the score to 4.7 in 4 months, online bookings doubled.",
+    avatar: { src: "/images/dental-case-study-2.png", alt: "Luxury Car Rental Company" },
+    name: "Luxury Car Rental Company",
+    title: "Business Bay, Dubai",
   },
   {
     quote:
-      "A premium aesthetic clinic was attracting attention online, but too many potential clients were dropping off before booking. Its 4.0-star rating and mixed review profile were creating doubt at the point of decision. Reputation Experts helped reposition the business by challenging damaging reviews, building a stronger flow of genuine positive feedback, and improving the spa's wider digital trust signals. Within four months, the rating rose to 4.8 stars and treatment enquiries and package bookings increased by 35%.",
-    avatar: { src: "/images/dental-case-study-3.png", alt: "Pierre Lambert" },
-    name: "Pierre Lambert",
-    title: "Reputation Acceleration for an Aesthetic Clinic in London",
+      "Pool fit-out contractor tripled revenue after 5 months working with us, now recommended by Google AI Overview and ChatGPT for swimming pool contractor in Dubai.",
+    avatar: { src: "/images/dental-case-study-3.png", alt: "Swimming Pool Contractor" },
+    name: "Swimming Pool Contractor",
+    title: "Dubai Investment Park, Dubai",
   },
 ];
 
